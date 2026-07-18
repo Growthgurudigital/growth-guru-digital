@@ -125,6 +125,7 @@ form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
+    // Loading state
     submitBtn.disabled = true;
     submitBtn.innerHTML = "Sending...";
 
@@ -141,26 +142,57 @@ form.addEventListener("submit", async function (e) {
 
         if (data.success) {
 
-            result.innerHTML = "✅ Thank you! Your message has been sent successfully.";
-            result.style.color = "#16a34a";
+            // Success UI
+            result.className = "form-message success";
+            result.innerHTML = `
+                <div class="message-box">
+                    <strong>Thank You!</strong><br>
+                    Your message has been sent successfully.<br>
+                    We will contact you within 24 hours.
+                </div>
+            `;
 
             form.reset();
 
+            // Button success state
+            submitBtn.innerHTML = "✓ Sent Successfully";
+
+            // Reset button after 2 seconds
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = "Get Free Consultation";
+            }, 2000);
+
+            // Auto hide message after 5 seconds
+            setTimeout(() => {
+                result.innerHTML = "";
+            }, 5000);
+
         } else {
 
-            result.innerHTML = "❌ Something went wrong. Please try again.";
-            result.style.color = "#dc2626";
+            result.className = "form-message error";
+            result.innerHTML = `
+                <div class="message-box">
+                    <strong>Something went wrong.</strong><br>
+                    Please try again.
+                </div>
+            `;
 
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Get Free Consultation";
         }
 
     } catch (error) {
 
-        result.innerHTML = "❌ Network Error. Please try again.";
-        result.style.color = "#dc2626";
+        result.className = "form-message error";
+        result.innerHTML = `
+            <div class="message-box">
+                <strong>Network Error.</strong><br>
+                Please check your connection and try again.
+            </div>
+        `;
 
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Get Free Consultation";
     }
-
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = "Get Free Consultation";
-
 });
