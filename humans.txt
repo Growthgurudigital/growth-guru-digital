@@ -1,0 +1,41 @@
+/* TEAM */
+
+Company: GrowthGuru Digital
+Founder: Pankaj Rahul
+Website: https://growthgurudigital.github.io/growth-guru-digital/
+Email: growthgurudigital@gmail.com
+
+/* SERVICES */
+
+- WordPress Website Development
+- Shopify Store Development
+- Search Engine Optimization (SEO)
+- Local SEO
+- Technical SEO
+- Google Ads Management
+- Social Media Marketing
+- Website Speed Optimization
+
+/* TECHNOLOGY */
+
+HTML5
+CSS3
+JavaScript
+GitHub Pages
+Schema.org
+Open Graph
+JSON-LD
+
+/* TARGET MARKET */
+
+India
+New Zealand
+United States
+Canada
+Australia
+United Kingdom
+Worldwide
+
+/* THANK YOU */
+
+Thanks for visiting GrowthGuru Digital.
