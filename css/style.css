@@ -2711,12 +2711,32 @@ font-size:30px;
 
 }
 
-.contact-form button{
+.contact-form .btn{
+    width:240px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    width:220px;
+    background:linear-gradient(135deg,#ff5b5b,#ef4444);
+    color:#fff;
 
+    border:none;
+    border-radius:999px;
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:0 15px 35px rgba(239,68,68,.25);
+    transition:.35s;
 }
 
+.contact-form .btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 45px rgba(239,68,68,.35);
+}
 
 
 /*==========================================
