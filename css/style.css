@@ -3357,3 +3357,22 @@ img{
 *{
     -webkit-tap-highlight-color:transparent;
 }
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    overflow-x: hidden;
+}
