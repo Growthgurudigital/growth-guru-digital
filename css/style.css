@@ -2757,6 +2757,52 @@ font-size:30px;
     opacity:.7;
     cursor:not-allowed;
 }
+/* ===============================
+   Contact Form Messages
+================================== */
+
+.form-message{
+    margin-top:20px;
+    text-align:center;
+}
+
+.message-box{
+    padding:16px 20px;
+    border-radius:14px;
+    font-size:15px;
+    line-height:1.7;
+    font-weight:500;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    animation:fadeIn .3s ease;
+}
+
+.form-message.success .message-box{
+    background:#ecfdf5;
+    color:#166534;
+    border:1px solid #bbf7d0;
+}
+
+.form-message.error .message-box{
+    background:#fef2f2;
+    color:#991b1b;
+    border:1px solid #fecaca;
+}
+
+#submitBtn:disabled{
+    opacity:.8;
+    cursor:not-allowed;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
 /*==========================================
                 FOOTER
