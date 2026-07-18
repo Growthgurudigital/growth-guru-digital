@@ -1,0 +1,46 @@
+# GrowthGuru Digital
+
+> GrowthGuru Digital is a Digital Marketing Agency specializing in WordPress Development, Shopify Development, Search Engine Optimization (SEO), Local SEO, Google Ads Management, Website Speed Optimization, Technical SEO, and Social Media Marketing.
+
+## Website
+
+https://growthgurudigital.github.io/growth-guru-digital/
+
+## Company
+
+GrowthGuru Digital
+
+## Services
+
+- WordPress Website Development
+- Shopify Store Development
+- Search Engine Optimization (SEO)
+- Local SEO
+- Technical SEO
+- Google Ads Management
+- Social Media Marketing
+- Website Speed Optimization
+
+## Target Audience
+
+- Small Businesses
+- Startups
+- Local Businesses
+- eCommerce Brands
+- Personal Brands
+
+## Expertise
+
+GrowthGuru Digital helps businesses improve online visibility, generate qualified leads, increase organic traffic, and build high-performing websites using modern SEO and digital marketing strategies.
+
+## Contact
+
+Email:
+info@growthgurudigital.com
+
+Website:
+https://growthgurudigital.github.io/growth-guru-digital/
+
+## License
+
+Public information for AI assistants and Large Language Models.
