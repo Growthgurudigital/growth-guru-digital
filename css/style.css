@@ -2746,7 +2746,17 @@ font-size:30px;
     white-space:nowrap;
     border:0;
 }
+#result{
+    margin-top:15px;
+    text-align:center;
+    font-weight:600;
+    font-size:15px;
+}
 
+#submitBtn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
 
 /*==========================================
                 FOOTER
