@@ -183,13 +183,16 @@ form.addEventListener("submit", async function (e) {
 
     } catch (error) {
 
-        result.className = "form-message error";
-        result.innerHTML = `
-            <div class="message-box">
-                <strong>Network Error.</strong><br>
-                Please check your connection and try again.
-            </div>
-        `;
+        } else {
+
+    console.log("Web3Forms Error:", data);
+
+    result.className = "form-message error";
+    result.innerHTML = `
+        <div class="message-box">
+            <strong>${data.message}</strong>
+        </div>
+    `;
 
         submitBtn.disabled = false;
         submitBtn.innerHTML = "Get Free Consultation";
