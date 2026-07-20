@@ -145,7 +145,13 @@ if (form && result && submitBtn) {
 
             if (data.success) {
 
-                result.className = "form-message success";
+    // Google Analytics 4 Lead Event
+    gtag('event', 'generate_lead', {
+        form_name: 'Contact Form',
+        method: 'Web3Forms'
+    });
+
+    result.className = "form-message success";
 
                 result.innerHTML = `
                     <div class="message-box">
