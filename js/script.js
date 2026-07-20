@@ -125,7 +125,6 @@ form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
-    // Loading state
     submitBtn.disabled = true;
     submitBtn.innerHTML = "Sending...";
 
@@ -138,11 +137,14 @@ form.addEventListener("submit", async function (e) {
             body: formData
         });
 
-           console.log(data);
+        const data = await response.json();
+
+        console.log("Web3Forms Response:", data);
+
         if (data.success) {
 
-            // Success UI
             result.className = "form-message success";
+
             result.innerHTML = `
                 <div class="message-box">
                     <strong>Thank You!</strong><br>
@@ -153,27 +155,26 @@ form.addEventListener("submit", async function (e) {
 
             form.reset();
 
-            // Button success state
             submitBtn.innerHTML = "✓ Sent Successfully";
 
-            // Reset button after 2 seconds
             setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = "Get Free Consultation";
             }, 2000);
 
-            // Auto hide message after 5 seconds
             setTimeout(() => {
                 result.innerHTML = "";
             }, 5000);
 
         } else {
 
+            console.log("Web3Forms Error:", data);
+
             result.className = "form-message error";
+
             result.innerHTML = `
                 <div class="message-box">
-                    <strong>Something went wrong.</strong><br>
-                    Please try again.
+                    <strong>${data.message}</strong>
                 </div>
             `;
 
@@ -183,18 +184,19 @@ form.addEventListener("submit", async function (e) {
 
     } catch (error) {
 
-        } else {
+        console.error(error);
 
-    console.log("Web3Forms Error:", data);
+        result.className = "form-message error";
 
-    result.className = "form-message error";
-    result.innerHTML = `
-        <div class="message-box">
-            <strong>${data.message}</strong>
-        </div>
-    `;
+        result.innerHTML = `
+            <div class="message-box">
+                <strong>Network Error</strong><br>
+                Please try again.
+            </div>
+        `;
 
         submitBtn.disabled = false;
         submitBtn.innerHTML = "Get Free Consultation";
     }
+
 });
