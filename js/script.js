@@ -121,60 +121,77 @@ const form = document.getElementById("contactForm");
 const result = document.getElementById("result");
 const submitBtn = document.getElementById("submitBtn");
 
-form.addEventListener("submit", async function (e) {
+if (form && result && submitBtn) {
 
-    e.preventDefault();
+    form.addEventListener("submit", async function (e) {
 
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = "Sending...";
+        e.preventDefault();
 
-    const formData = new FormData(form);
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Sending...";
 
-    try {
+        const formData = new FormData(form);
 
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
+        try {
 
-        const data = await response.json();
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
 
-        console.log("Web3Forms Response:", data);
+            const data = await response.json();
 
-        if (data.success) {
+            console.log("Web3Forms Response:", data);
 
-            result.className = "form-message success";
+            if (data.success) {
 
-            result.innerHTML = `
-                <div class="message-box">
-                    <strong>Thank You!</strong><br>
-                    Your message has been sent successfully.<br>
-                    We will contact you within 24 hours.
-                </div>
-            `;
+                result.className = "form-message success";
 
-            form.reset();
+                result.innerHTML = `
+                    <div class="message-box">
+                        <strong>Thank You!</strong><br>
+                        Your message has been sent successfully.<br>
+                        We will contact you within 24 hours.
+                    </div>
+                `;
 
-            submitBtn.innerHTML = "✓ Sent Successfully";
+                form.reset();
 
-            setTimeout(() => {
+                submitBtn.innerHTML = "✓ Sent Successfully";
+
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = "Get Free Consultation";
+                }, 2000);
+
+                setTimeout(() => {
+                    result.innerHTML = "";
+                }, 5000);
+
+            } else {
+
+                result.className = "form-message error";
+
+                result.innerHTML = `
+                    <div class="message-box">
+                        <strong>${data.message}</strong>
+                    </div>
+                `;
+
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = "Get Free Consultation";
-            }, 2000);
+            }
 
-            setTimeout(() => {
-                result.innerHTML = "";
-            }, 5000);
+        } catch (error) {
 
-        } else {
-
-            console.log("Web3Forms Error:", data);
+            console.error(error);
 
             result.className = "form-message error";
 
             result.innerHTML = `
                 <div class="message-box">
-                    <strong>${data.message}</strong>
+                    <strong>Network Error</strong><br>
+                    Please try again.
                 </div>
             `;
 
@@ -182,21 +199,6 @@ form.addEventListener("submit", async function (e) {
             submitBtn.innerHTML = "Get Free Consultation";
         }
 
-    } catch (error) {
+    });
 
-        console.error(error);
-
-        result.className = "form-message error";
-
-        result.innerHTML = `
-            <div class="message-box">
-                <strong>Network Error</strong><br>
-                Please try again.
-            </div>
-        `;
-
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "Get Free Consultation";
-    }
-
-});
+}
