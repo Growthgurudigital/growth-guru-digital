@@ -4,8 +4,7 @@
 
 ## Website
 
-https://growthgurudigital.github.io/growth-guru-digital/
-
+https://growthgurudigital.com
 ## Company
 
 GrowthGuru Digital
@@ -39,8 +38,7 @@ Email:
 growthgurudigital1@gmail.com
 
 Website:
-https://growthgurudigital.github.io/growth-guru-digital/
-
+https://growthgurudigital.com
 ## License
 
 Public information for AI assistants and Large Language Models.
