@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://growthgurudigital.github.io/growth-guru-digital/sitemap.xml
+Sitemap: https://growthgurudigital.com/sitemap.xml
