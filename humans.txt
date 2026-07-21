@@ -2,7 +2,7 @@
 
 Company: GrowthGuru Digital
 Founder: Pankaj Rahul
-Website: https://growthgurudigital.github.io/growth-guru-digital/
+Website: https://growthgurudigital.com
 Email: growthgurudigital1@gmail.com
 
 /* SERVICES */
