@@ -220,7 +220,9 @@ document.querySelector(".close-review").onclick=function(){
 
 document.getElementById("reviewPopup").style.display="none";
 
-localStorage.setItem("hideReview",Date.now());
+if(localStorage.getItem("reviewClosed")){
+    return;
+}
 
 };
 
