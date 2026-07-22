@@ -209,21 +209,21 @@ if (form && result && submitBtn) {
 
 }
 
-document.addEventListener("DOMContentLoaded",function(){
+const popup = document.getElementById("reviewPopup");
+const closeBtn = document.querySelector(".close-review");
 
-if(localStorage.getItem("hideReview")){
-document.getElementById("reviewPopup").style.display="none";
-return;
-}
+// Page load hone ke 3 second baad popup show hoga
+window.addEventListener("load", () => {
 
-document.querySelector(".close-review").onclick=function(){
+    setTimeout(() => {
+        popup.style.display = "block";
+    }, 3000);
 
-document.getElementById("reviewPopup").style.display="none";
+});
 
-if(localStorage.getItem("reviewClosed")){
-    return;
-}
+// Close button
+closeBtn.addEventListener("click", () => {
 
-};
+    popup.style.display = "none";
 
 });
