@@ -3482,13 +3482,15 @@ position:relative;
 }
 
 .google-logo{
-height:28px;
+width:28px;
+height:auto;
 margin-bottom:8px;
 }
 
 .review-box h4{
 margin:5px 0;
 font-size:18px;
+font-weight:700;
 }
 
 .stars{
@@ -3502,6 +3504,7 @@ margin:8px 0;
 font-size:14px;
 color:#666;
 margin-bottom:15px;
+line-height:1.4;
 }
 
 .review-box a{
@@ -3528,6 +3531,51 @@ background:none;
 font-size:22px;
 cursor:pointer;
 color:#777;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+.review-popup{
+bottom:12px;
+right:12px;
+}
+
+.review-box{
+width:200px;
+padding:12px;
+border-radius:14px;
+}
+
+.google-logo{
+width:22px;
+}
+
+.review-box h4{
+font-size:16px;
+}
+
+.stars{
+font-size:18px;
+margin:6px 0;
+}
+
+.review-box p{
+font-size:12px;
+margin-bottom:10px;
+}
+
+.review-box a{
+padding:8px 12px;
+font-size:13px;
+}
+
+.close-review{
+font-size:18px;
+top:6px;
+right:8px;
+}
+
 }
 
 @keyframes slideUp{
