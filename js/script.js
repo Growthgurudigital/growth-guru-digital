@@ -208,3 +208,20 @@ if (form && result && submitBtn) {
     });
 
 }
+
+document.addEventListener("DOMContentLoaded",function(){
+
+if(localStorage.getItem("hideReview")){
+document.getElementById("reviewPopup").style.display="none";
+return;
+}
+
+document.querySelector(".close-review").onclick=function(){
+
+document.getElementById("reviewPopup").style.display="none";
+
+localStorage.setItem("hideReview",Date.now());
+
+};
+
+});
