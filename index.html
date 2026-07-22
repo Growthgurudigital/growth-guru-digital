@@ -1529,12 +1529,7 @@ Local SEO, and Social Media Marketing services worldwide.
         </div>
 
         <div class="footer-bottom"> 
-             <a href="https://g.page/r/CSD-S6kl-Wi4EBM/review"
-   target="_blank"
-   rel="noopener"
-   class="google-review-btn">
-    ⭐ Review Us on Google
-</a>
+            
             <p>
                 © 2026 Growth Guru Digital. All Rights Reserved.
             </p>
@@ -1574,5 +1569,194 @@ window.addEventListener("scroll", () => {
 
 });
 </script>
+    <!-- ================= GOOGLE REVIEW POPUP ================= -->
+<style>
+#gg-review-popup{
+position:fixed;
+right:25px;
+bottom:25px;
+width:340px;
+max-width:90%;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border-radius:20px;
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+padding:20px;
+z-index:999999;
+transform:translateY(150%);
+opacity:0;
+transition:.6s;
+font-family:Poppins,sans-serif;
+border:1px solid rgba(255,255,255,.3);
+}
+
+#gg-review-popup.show{
+transform:translateY(0);
+opacity:1;
+animation:bounce .8s;
+}
+
+@keyframes bounce{
+0%{transform:translateY(150%)}
+60%{transform:translateY(-10px)}
+80%{transform:translateY(5px)}
+100%{transform:translateY(0)}
+}
+
+.gg-close{
+position:absolute;
+right:15px;
+top:10px;
+font-size:22px;
+cursor:pointer;
+color:#777;
+}
+
+.gg-google{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.gg-google img{
+width:34px;
+}
+
+.gg-title{
+font-size:18px;
+font-weight:700;
+color:#111;
+}
+
+.gg-stars{
+font-size:22px;
+color:#FDBA12;
+margin:8px 0;
+}
+
+.gg-text{
+font-size:15px;
+color:#555;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.gg-btn{
+display:inline-block;
+background:#2563EB;
+color:#fff;
+padding:12px 22px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.gg-btn:hover{
+background:#1D4ED8;
+transform:translateY(-2px);
+}
+
+.gg-trusted{
+margin-top:12px;
+font-size:13px;
+color:#666;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.gg-hide{
+display:block;
+margin-top:10px;
+font-size:13px;
+color:#888;
+cursor:pointer;
+text-decoration:underline;
+}
+
+@media(max-width:768px){
+#gg-review-popup{
+left:15px;
+right:15px;
+bottom:15px;
+width:auto;
+}
+}
+</style>
+
+<div id="gg-review-popup">
+
+<div class="gg-close" onclick="closeReviewPopup()">×</div>
+
+<div class="gg-google">
+<img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png">
+<div>
+<div class="gg-title">Google Reviews</div>
+<div style="font-size:13px;color:#666;">GrowthGuru Digital</div>
+</div>
+</div>
+
+<div class="gg-stars">
+★★★★★
+</div>
+
+<div class="gg-text">
+Your feedback helps us grow and serve more businesses.
+If you loved working with us, we'd really appreciate a quick Google review.
+</div>
+
+<a class="gg-btn"
+href="https://g.page/r/CSD-S6kl-Wi4EBM/review"
+target="_blank">
+Leave a Review
+</a>
+
+<div class="gg-trusted">
+✅ Trusted by Businesses
+</div>
+
+<div class="gg-hide" onclick="hideForWeek()">
+Don't show again
+</div>
+
+</div>
+
+<script>
+
+if(!localStorage.getItem("ggReviewHide")){
+
+setTimeout(function(){
+document.getElementById("gg-review-popup").classList.add("show");
+},3000);
+
+}
+
+function closeReviewPopup(){
+document.getElementById("gg-review-popup").style.display="none";
+}
+
+function hideForWeek(){
+
+const expire=Date.now()+7*24*60*60*1000;
+
+localStorage.setItem("ggReviewHide",expire);
+
+document.getElementById("gg-review-popup").style.display="none";
+
+}
+
+const hideUntil=localStorage.getItem("ggReviewHide");
+
+if(hideUntil && Date.now()>hideUntil){
+
+localStorage.removeItem("ggReviewHide");
+
+}
+
+</script>
+<!-- ================= END REVIEW POPUP ================= -->
 </body>
 </html>
