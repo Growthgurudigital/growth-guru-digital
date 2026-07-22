@@ -3461,24 +3461,81 @@ img {
 section {
     overflow-x: hidden;
 }
-.google-review-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:#ffffff;
-    color:#202124;
-    border:2px solid #dadce0;
-    padding:14px 26px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+.review-popup{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:9999;
+animation:slideUp .7s;
 }
 
-.google-review-btn:hover{
-    background:#4285F4;
-    color:#fff;
-    border-color:#4285F4;
-    transform:translateY(-2px);
+.review-box{
+width:260px;
+padding:18px;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(12px);
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,.18);
+text-align:center;
+position:relative;
+}
+
+.google-logo{
+height:28px;
+margin-bottom:8px;
+}
+
+.review-box h4{
+margin:5px 0;
+font-size:18px;
+}
+
+.stars{
+color:#FFC107;
+font-size:22px;
+letter-spacing:2px;
+margin:8px 0;
+}
+
+.review-box p{
+font-size:14px;
+color:#666;
+margin-bottom:15px;
+}
+
+.review-box a{
+display:inline-block;
+padding:10px 18px;
+background:#4285F4;
+color:#fff;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.review-box a:hover{
+background:#1b66d1;
+}
+
+.close-review{
+position:absolute;
+top:8px;
+right:10px;
+border:none;
+background:none;
+font-size:22px;
+cursor:pointer;
+color:#777;
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
